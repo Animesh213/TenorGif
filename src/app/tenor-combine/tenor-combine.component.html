@@ -1,0 +1,19 @@
+<div class="container searchPage">
+  <h2>{{ heading }}</h2>
+  <hr />
+
+  <!--Card image after search and get display section-->
+
+  <div class="row" *ngIf="showGifValue">
+    <div
+      class="col-md-4 animated fadeIn"
+      *ngFor="let g of tenorGifData; let i = index">
+      <div *ngFor="let media of g.media">
+        <div style="margin-bottom: 20px;" class="card" ripple-radius>
+          <img [src]="media?.tinygif.url" alt="Card image cap" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

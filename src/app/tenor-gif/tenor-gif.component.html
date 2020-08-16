@@ -1,0 +1,76 @@
+<div class="topNavbar">
+  <!--  Header Section with search bar-->
+  <div class="container">
+    <span style="display: flex;">
+      <a class="navbar-brand" style="margin-top: 3px;">
+        <img
+          src="../assets/img/tenor-logo-white.svg"
+          alt="Tenor"
+          height="22"
+          width="80"
+        />
+      </a>
+      <div class="searchBar" style="flex: auto;">
+        <div class="input-container">
+          <input
+            type="text"
+            placeholder="Search for GIFs"
+            [(ngModel)]="search"
+            (keyup)="getAutoFillData($event)"
+            style="
+              flex: auto;
+              width: 100%;
+              padding: 10px;
+              border-radius: 4px;
+              border: 1px solid transparent;
+            "
+          />
+          <i class="fa fa-search fa-lg icon" aria-hidden="true"></i>
+        </div>
+        <div class="suggest" id="suggestedData" *ngIf="showDrop">
+          <ul class="mainmenu" *ngFor="let s of searchAutoFillData">
+            <li>
+              <a
+                (click)="dropDown(s); showDrop = !showDrop; search = s"
+                href="javascript:void(0)"
+                >{{ s }}</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </span>
+  </div>
+
+  <!-- Trending Gif Section --> 
+
+  <div class="view" *ngIf="openTrendingGif">
+    <div class="trendingPage">
+      <div class="container page">
+        <h2>Trending GIFs</h2>
+        <hr />
+        <div class="row">
+          <div class="col-md-3" *ngFor="let d of dataTenor">
+            <div>
+              <div class="card" style="margin-bottom: 10px;">
+                <img
+                  [src]="d.media[0].gif.url"
+                  [width]="262.5"
+                  [height]="262.5"
+                  alt="Mhmm Wendy Williams GIF - Mhmm WendyWilliams GIFs"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--Search and click Section -->  
+  <div class="container" *ngIf="dataSearchedGif">
+    <app-tenor-combine [mydata]="searchVal"></app-tenor-combine>
+  </div>
+
+  
+</div>

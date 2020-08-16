@@ -1,0 +1,102 @@
+.topNavbar {
+    height: 75px;
+    padding: 12px;
+    background-image: linear-gradient(90deg,#4cafff,#2e93e6);
+    z-index: 200;
+    vertical-align: sub;
+  }
+  
+  .gifList {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: -20px -10px!important;
+  }
+  .gifList .column {
+    position: relative;
+    top: 0;
+    margin: 0;
+    flex-grow: 1;
+    flex-basis: 0;
+    height: 100%;
+  }
+  
+  .page {
+    padding-top: 50px;
+      margin-bottom: 30px;
+  }
+  .example-full-width {
+    width: 100%;
+  }
+  
+  .searchBar {
+    border-radius: 14px;
+  }
+  
+  .input-container {
+    display: flex;
+    width: 100%;
+  }
+  .icon {
+    padding: 13px;
+      background: white;
+      border: 1px solid transparent;
+      color: black;
+      min-width: 50px;
+      text-align: center;
+      margin-left: -9px;
+      border-radius: 9px;
+      align-items: center;
+      justify-content: center;
+  }
+  
+  input:focus{
+    outline: none;
+  }
+  
+  
+  
+  /****************************************/
+  
+  .suggest {
+    width: 1014px;
+    border: 1px solid #efefef;
+    /* position: absolute; */
+    background: white;
+    top: 56px;
+    overflow: auto;
+    /* height: 20%; */
+  }
+  
+  /* reset our lists to remove bullet points and padding */
+  .mainmenu, .submenu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  /* make ALL links (main and submenu) have padding and background color */
+  .mainmenu a {
+    display: block;
+    border-bottom: 1px solid #e5e5e5;
+    text-decoration: none;
+    padding: 10px;
+    color: #000;
+  }
+  
+  /* add hover behaviour */
+  .mainmenu a:hover {
+    background-color: #f3f3f3;
+  }
+  
+  
+  /* when hovering over a .mainmenu item,
+    display the submenu inside it.
+    we're changing the submenu's max-height from 0 to 200px;
+    */
+  
+    .mainmenu li:hover .submenu {
+      display: block;
+      max-height: 200px;
+    }
